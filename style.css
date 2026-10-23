@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root { --bg:#090a13; --panel:rgba(19,21,39,.94); --text:#f5f4ff; --muted:#aaaac5; --purple:#9a72ff; --cyan:#61e7f5; --line:rgba(177,158,255,.22); }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100vh; color:var(--text); font-family:Inter,sans-serif; background:radial-gradient(ellipse at 15% 15%,rgba(109,66,207,.22),transparent 38%),radial-gradient(ellipse at 90% 80%,rgba(43,173,195,.13),transparent 35%),var(--bg); display:grid; place-items:center; padding:28px 16px; }
+body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.2; background-image:radial-gradient(#b9b0ff 1px,transparent 1px); background-size:34px 34px; }
+.app { width:min(720px,100%); position:relative; }
+.hero { margin:0 0 25px; }
+.eyebrow,.quiz-top,.category,footer { font-family:"Space Grotesk",sans-serif; letter-spacing:.13em; font-size:.74rem; }
+.eyebrow { color:var(--cyan); font-weight:700; }
+h1 { font:700 clamp(2.4rem,8vw,4.2rem)/1.03 "Space Grotesk",sans-serif; margin:14px 0; letter-spacing:-.055em; }
+h1 span { color:var(--purple); }
+.hero p,.panel>p { color:var(--muted); line-height:1.7; max-width:570px; }
+.panel { padding:clamp(24px,5vw,42px); border:1px solid var(--line); border-radius:24px; background:var(--panel); box-shadow:0 24px 80px rgba(0,0,0,.3); backdrop-filter:blur(12px); }
+.orb { display:grid; place-items:center; width:54px; height:54px; border-radius:16px; background:linear-gradient(135deg,var(--purple),#5642b8); color:white; font-size:1.7rem; box-shadow:0 8px 28px rgba(154,114,255,.28); margin-bottom:20px; }
+h2 { font:700 clamp(1.45rem,4vw,2rem)/1.25 "Space Grotesk",sans-serif; margin:0 0 12px; }
+.primary { border:0; border-radius:13px; padding:15px 19px; margin-top:18px; width:100%; background:linear-gradient(100deg,var(--purple),#7656e8); color:white; font:700 1rem Inter,sans-serif; cursor:pointer; transition:transform .18s,filter .18s; }
+.primary:hover { transform:translateY(-2px); filter:brightness(1.12); }
+.primary span { float:right; font-size:1.2rem; }
+.hidden { display:none!important; }
+.quiz-top { display:flex; justify-content:space-between; color:var(--cyan); font-weight:700; }
+.progress { height:6px; border-radius:99px; background:#2b2b43; margin:16px 0 28px; overflow:hidden; }
+#progress-fill { height:100%; width:0; background:linear-gradient(90deg,var(--purple),var(--cyan)); transition:width .3s; }
+.category { color:var(--purple); font-weight:700; margin:0 0 12px; }
+.answers { display:grid; gap:11px; margin-top:23px; }
+.answer { display:flex; gap:12px; align-items:center; width:100%; text-align:left; color:var(--text); background:#17192b; border:1px solid #30324c; border-radius:13px; padding:15px; font:500 .97rem/1.45 Inter,sans-serif; cursor:pointer; transition:border .15s,background .15s; }
+.answer:hover:not(:disabled) { border-color:var(--purple); background:#20203a; }
+.answer .letter { display:grid; place-items:center; flex:0 0 30px; height:30px; border-radius:9px; background:#2a2945; color:#c9bbff; font-weight:800; }
+.answer.correct { border-color:#4ce1b0; background:rgba(42,157,119,.15); }
+.answer.correct .letter { background:#236d59; color:#b9ffe8; }
+.answer.wrong { border-color:#ff7f9a; background:rgba(187,54,87,.14); }
+.answer.wrong .letter { background:#7c3048; color:#ffd0dc; }
+.feedback { margin-top:18px; border-left:3px solid var(--cyan); background:rgba(97,231,245,.07); padding:14px 16px; border-radius:0 12px 12px 0; color:#d8faff; line-height:1.6; }
+.result-score { font:700 2.6rem "Space Grotesk",sans-serif; color:var(--cyan); margin:18px 0 4px; }
+footer { color:#777894; text-align:center; margin-top:22px; }
+footer span { color:var(--purple); margin:0 7px; }
+@media(max-width:480px) { .panel { border-radius:18px; } .answer { padding:12px; } }
